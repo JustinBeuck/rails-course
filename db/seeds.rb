@@ -36,3 +36,13 @@ Video.create([
     user_id: 1
   }
   ])
+Sound.create([
+  {
+    title: "Nobody Cares",
+    soundcloud_url: "146831498"
+  },
+  {
+    title: "Less People Care",
+    soundcloud_url: "146831621" 
+  }
+  ])
