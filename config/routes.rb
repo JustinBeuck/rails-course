@@ -6,6 +6,7 @@ Metube::Application.routes.draw do
   post '/videos' => 'videos#create'
   get "/videos/:id/edit", to: "videos#edit"
   put "/videos/:id", to: "videos#update"
+  delete '/videos/:id' => 'videos#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
