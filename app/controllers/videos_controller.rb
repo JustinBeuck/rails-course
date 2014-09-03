@@ -12,9 +12,14 @@ class VideosController < ApplicationController
   end
 
   def create
-  	video = Video.new(params)
+  	video = Video.new(video_params)
   	video.save
   	redirect_to root_path
   end
-  
+
+  private
+   def video_params
+    params.require(:video).permit(:title, :description, :youtube_id)
+   end
+
 end
