@@ -1,5 +1,27 @@
-<h1><%= @video.title %></h1>
-
-<h3><%= @video.description %></h3>
-
-<iframe width="420" height="315" src="//www.youtube.com/embed/<%= @video.youtube_id %>" frameborder="0" allowfullscreen></iframe>
+<!-- Video Control Section -->
+<div class="video">
+	<div class="row" style="margin-top: 140px">
+		<div class="large-6 columns">
+			<h1><%= @video.title %></h1>
+			
+			<h3><%= @video.description %></h3>
+		</div>
+		<iframe width="420" height="315" src="//www.youtube.com/embed/<%= @video.youtube_id %>" frameborder="0" allowfullscreen></iframe>
+		<form action="/videos/<%= @video.id %>/comments" method="post">
+			<label for="comments"></label>
+			<div class="large-12 columns">
+				<label>Comments:
+					<textarea placeholder="write your lame comments here" type="text" id="content" name="comment[content]"></textarea>
+				</label>
+			</div>
+			<input type="hidden" name="comment[video_id]" value="<%= @video.id %>">
+			<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+			<input type="submit" value="submit">
+		</form>
+		<ul>
+			<% @video.comments.each do | x | %>
+			<li><p class="panel"><%= x.content %></p></li>
+			<% end %>
+		</ul>
+	</div>
+</div>

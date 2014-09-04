@@ -46,3 +46,14 @@ Sound.create([
     soundcloud_url: "146831621" 
   }
   ])
+Comment.create([
+  {
+    content: "Joey is an idiot",
+    video_id: 2
+  },
+  {
+    content: "Justin != an idiot",
+    video_id: 3
+  }
+  ])
+

@@ -1,3 +1,4 @@
+
 <form action=<%= "/videos/#{params[:id]}" %> method="post">
   <!-- This is needed because the browser does not support PUT in a form -->
   <!-- However, if Rails sees this input, it will treat it as a PUT request -->
@@ -16,4 +17,10 @@
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 
   <input type="submit" value="submit">
+</form>
+
+<form action=<%= "/videos/#{params[:id]}" %> method="POST">
+  <input name="_method" type="submit" value="delete">
+
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 </form>
